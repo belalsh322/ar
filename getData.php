@@ -12,7 +12,6 @@ $htmlResult = open_url($url);
 $parsed = get_string_between($htmlResult, 'class="_gUb"', '</a>');
 #echo the parsed result as html to the page
 echo $parsed; 
-echo "anas";
 
 	#this function returns what is in between two strings
 	function get_string_between($string, $start, $end){
