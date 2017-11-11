@@ -4,15 +4,6 @@
 
 #DesiredURL is https://www.google.com/searchbyimage?&image_url=<YOUR IMAGE URL>
 
-#grab desired url from url 
-$url = $_GET["url"];
-#save the html from the url as a variable
-$htmlResult = open_url($url);
-#get the desired text from between two strings
-$parsed = get_string_between($htmlResult, 'class="_gUb"', '</a>');
-#echo the parsed result as html to the page
-echo $parsed; 
-
 	#this function returns what is in between two strings
 	function get_string_between($string, $start, $end){
 		$string = ' ' . $string;
@@ -38,6 +29,15 @@ echo $parsed;
         curl_close($curl);
         return $content;
     }
+
+#grab desired url from url 
+$url = $_GET["url"];
+#save the html from the url as a variable
+$htmlResult = open_url($url);
+#get the desired text from between two strings
+$parsed = get_string_between($htmlResult, 'class="_gUb"', '</a>');
+#echo the parsed result as html to the page
+echo $parsed; 
 
 
 ?>
